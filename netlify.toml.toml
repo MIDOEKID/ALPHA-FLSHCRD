@@ -1,0 +1,19 @@
+<!-- Guide to make file links permanent on Netlify -->
+
+<!-- netlify.toml file for cache configuration -->
+[[headers]]
+for = "/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000" # Cache files for one year
+
+<!-- Example _redirects file for permanent links -->
+/uploads/*  /static/uploads/:splat  200
+
+<!-- Example file structure -->
+public/
+├── uploads/
+│   ├── file1.pdf
+│   ├── file2.png
+
+<!-- Resulting permanent link -->
+http://alphagenius.xyz/uploads/file1.pdf
